@@ -1,14 +1,6 @@
-/*.bg-image {
-  background-image: url("../../assets/images/login-background.jpg");
-  height: 100vh;
-  background-position: center;
-  background-size: cover;
-  overflow: hidden;
-}*/
 @import "~bootstrap-icons/font/bootstrap-icons.css";
-
 html, body {
-  background-image: url("../../assets/images/login-background.jpg");
+  background-image: url("src/assets/images/login-background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -32,11 +24,6 @@ html, body {
   font-size: 60px;
   margin-left: 10px;
   color: #FFC312;
-}
-
-.social_icon span:hover {
-  color: white;
-  cursor: pointer;
 }
 
 .card-header h3 {
