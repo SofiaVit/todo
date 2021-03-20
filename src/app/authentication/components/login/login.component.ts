@@ -1,6 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {AuthDetailsModule} from "../../auth-details.module";
 import {NgbAlert} from "@ng-bootstrap/ng-bootstrap";
+import {Router} from "@angular/router";
+import {AuthService} from "../../auth.service";
 
 @Component({
   selector: 'app-login',
@@ -13,14 +15,19 @@ export class LoginComponent implements OnInit {
   authDetails = new AuthDetailsModule();
   @ViewChild('staticAlert', {static: false}) authenticationAlert: NgbAlert;
 
-  constructor() {
+  constructor(private router: Router, private authService: AuthService) {
   }
 
   ngOnInit(): void {
+    localStorage.clear();
   }
 
   authenticateLogin() {
-    if(this.authDetails.email !== "admin@gmail.com" || this.authDetails.password !== "123") {
+    if(this.authService.isAuthenticated(this.authDetails)) {
+      localStorage.setItem('isAuthenticated', "true");
+      this.router.navigate(['welcome'])
+    }
+    else{
       this.authenticationAlertClosed = false;
       setTimeout(() => this.authenticationAlert.close(), 10000);
     }
