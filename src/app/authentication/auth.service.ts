@@ -9,7 +9,7 @@ export class AuthService {
   constructor() { }
 
   isAuthenticated(authDetails: AuthDetailsModule) {
-    return (authDetails.email === "admin@gmail.com" || authDetails.password === "admin");
+    return authDetails.email === "admin@gmail.com" && authDetails.password === "admin";
   }
 
 }
