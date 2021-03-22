@@ -1,0 +1,21 @@
+<body>
+
+<!--<div class="container">
+  <div class="row">
+    <div class="col-sm-1"><app-lists-navigation></app-lists-navigation></div>
+    <div class="col-sm-offset-6 col-sm-8"><app-new-list-creation></app-new-list-creation></div>
+  </div>
+  <div class="row">
+
+  </div>
+</div>-->
+
+
+<div class="d-flex flex-row">
+    <app-lists-navigation [userName]="userName"></app-lists-navigation>
+  <div class="d-flex justify-content-center align-items-center">
+    <app-new-list-creation></app-new-list-creation>
+  </div>
+</div>
+</body>
+

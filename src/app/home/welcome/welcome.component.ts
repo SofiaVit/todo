@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {AuthDetailsModule} from "../authentication/auth-details.module";
+import {AuthDetailsModule} from "../../authentication/auth-details.module";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -12,9 +12,7 @@ export class WelcomeComponent implements OnInit {
   userName: string;
 
   constructor(private route: ActivatedRoute) {
-    this.route.queryParams.subscribe(params => {
-      this.userName = params['userName'];
-    })
+    this.userName = localStorage.getItem('userName');
   }
 
   ngOnInit(): void {

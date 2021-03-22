@@ -1,0 +1,30 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+h5{
+  font-style: italic;
+}
+
+.card{
+  height: 95vh;
+  width: 40vh;
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.7)
+}
+
+.card-header{
+  text-align: center;
+}
+
+.card-footer{
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
+
+#create-list-button{
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: var(--light);
+  border-radius: 30px;
+  padding: 10px;
+}
