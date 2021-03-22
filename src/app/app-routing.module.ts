@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent} from "./authentication/components/login/login.component";
-import {WelcomeComponent} from "./welcome/welcome.component";
+import {WelcomeComponent} from "./home/welcome/welcome.component";
 import {ErrorComponent} from "./error/error.component";
 import {AuthGuard} from "./authentication/auth/auth.guard";
 

@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {AuthDetailsModule} from "../../auth-details.module";
 import {NgbAlert} from "@ng-bootstrap/ng-bootstrap";
-import {NavigationExtras, Router} from "@angular/router";
+import {Router} from "@angular/router";
 import {AuthService} from "../../auth.service";
 
 @Component({
@@ -25,21 +25,13 @@ export class LoginComponent implements OnInit {
   authenticateLogin() {
     if(this.authService.isAuthenticated(this.authDetails)) {
       localStorage.setItem('isAuthenticated', "true");
-      this.router.navigate(['welcome'], this.createNavigationExtras())
+      localStorage.setItem('userName', this.authDetails.userName)
+      this.router.navigate(['welcome'])
     }
     else{
       this.authenticationAlertClosed = false;
       setTimeout(() => this.authenticationAlert.close(), 10000);
     }
-  }
-
-  createNavigationExtras(): NavigationExtras{
-    let navigationExtras: NavigationExtras = {
-      queryParams: {
-        userName: this.authDetails.userName
-      }
-    }
-    return navigationExtras;
   }
 }
 
